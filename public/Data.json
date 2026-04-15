@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Tanzid Tamim",
+    "picture": "https://i.ibb.co.com/q3PC3sXR/image.png",
+    "email": "aisha.rahman@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["college", "close friend", "study group"],
+    "bio": "Met during freshman orientation at university. We used to pull all-nighters together before exams. She's now a software engineer in Toronto.",
+    "goal": 14,
+    "next_due_date": "2025-07-15"
+  },
+  {
+    "id": 2,
+    "name": "Saif Hasan",
+    "picture": "https://i.ibb.co.com/bRHjSLY1/image.png",
+    "email": "marcus.t@outlook.com",
+    "days_since_contact": 6,
+    "status": "on-track",
+    "tags": ["childhood", "neighbor", "sports"],
+    "bio": "Grew up on the same street. We played football every weekend as kids. Still meet up whenever I'm back home. He coaches youth basketball now.",
+    "goal": 14,
+    "next_due_date": "2025-07-28"
+  },
+  {
+    "id": 3,
+    "name": "Tamim Iqbal",
+    "picture": "https://i.ibb.co.com/QvNZSpNZ/image.png",
+    "email": "sofia.delgado@yahoo.com",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["work", "mentor", "design"],
+    "bio": "My first manager at the agency. She taught me everything about UX research. Left to start her own design consultancy in Barcelona last year.",
+    "goal": 10,
+    "next_due_date": "2025-07-18"
+  },
+  {
+    "id": 4,
+    "name": "Mahmudullah Riad",
+    "picture": "https://i.ibb.co.com/nN4xnWhT/image.png",
+    "email": "james.okafor@protonmail.com",
+    "days_since_contact": 30,
+    "status": "overdue",
+    "tags": ["college", "travel buddy", "roommate"],
+    "bio": "My college roommate for two years. We backpacked through Southeast Asia after graduation. He's doing his PhD in environmental science in Nairobi.",
+    "goal": 21,
+    "next_due_date": "2025-07-05"
+  },
+  {
+    "id": 5,
+    "name": "Virat Kohli",
+    "picture": "https://i.ibb.co.com/ZRQwt4Md/images-3.webp",
+    "email": "priya.nair@gmail.com",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["close friend", "book club", "neighbor"],
+    "bio": "We met at a local book club three years ago and instantly bonded over our love of Murakami. We grab coffee almost every week and keep each other sane.",
+    "goal": 7,
+    "next_due_date": "2025-07-22"
+  },
+  {
+    "id": 6,
+    "name": "Sakib Al Hasan",
+    "picture": "https://i.ibb.co.com/1tCQfgxb/images-1.webp",
+    "email": "d.kim@koreantech.io",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["work", "startup", "tech"],
+    "bio": "Co-founder I met at a hackathon in 2019. We built a food delivery app prototype together that weekend. He's now leading a fintech startup in Seoul.",
+    "goal": 21,
+    "next_due_date": "2025-07-10"
+  },
+  {
+    "id": 7,
+    "name": "Ben Stroks",
+    "picture": "https://i.ibb.co.com/Xfj0FVGX/licensed-image-1.webp",
+    "email": "layla.hassan@icloud.com",
+    "days_since_contact": 13,
+    "status": "almost due",
+    "tags": ["family friend", "creative", "art"],
+    "bio": "Our families have known each other for over a decade. She's a freelance illustrator whose work has been featured in The New Yorker. Inspires me creatively.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 8,
+    "name": "Babar Azam",
+    "picture": "https://i.ibb.co.com/jkq8SNLH/licensed-image.webp",
+    "email": "ethan.brooks@live.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["gym buddy", "close friend", "hiking"],
+    "bio": "Met at the gym about four years ago. We push each other hard during workouts and decompress on weekend hikes. One of the most grounded people I know.",
+    "goal": 10,
+    "next_due_date": "2025-07-25"
+  }
+]
