@@ -6,12 +6,14 @@ const Friends =async () => {
     const res = await fetch('http:localhost:3000/Data.json')
     const friends = await res.json()
     return (
-        <div>
+        <div className='my-10 container mx-auto'>
         <h2 className='font-bold text-3xl mb-2.5'>Friends</h2>
-
+<div className='grid grid-cols-4 gap-6 '>
+    
         {
             friends.map((friend)=><FriendsCard key={friend.id} friend={friend}/>)
         }    
+</div>
         </div>
     );
 };

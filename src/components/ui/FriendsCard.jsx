@@ -1,16 +1,18 @@
 import Image from "next/image";
 import React from "react";
-
+const statusObj={
+"on-track":"bg-red-500",
+"almost due": "bg-green-500",
+"overdue": "bg-blue-500"
+}
 const FriendsCard = ({friend}) => {
 
     const {name,picture , days_since_contact,tags,status}=friend;
 
-    if(status==='overdue'){
-        
-    }
+    
   return (
     <div>
-      <div className="card bg-base-100  shadow-sm">
+      <div className="card bg-base-100  shadow-sm border">
         <figure className="px-10 pt-10">
        <Image className="rounded-full" src={picture} alt={name} width={100} height={100}/>
         </figure>
@@ -26,7 +28,7 @@ const FriendsCard = ({friend}) => {
         }
         </div>
 
-          {/* <div className="badge bg-green-200">{status}</div> */}
+          <div className={`badge ${statusObj[status]} `}>{status}</div>
 
        
         </div>
