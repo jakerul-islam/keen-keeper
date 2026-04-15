@@ -3,11 +3,13 @@ import FriendsCard from '../ui/FriendsCard';
 
 const Friends =async () => {
 
-    const res = await fetch('http:localhost:3000/Data.json')
+    const res = await fetch('https://keen-keeper-five.vercel.app/Data.json',{
+        cache:'no-store'
+    })
     const friends = await res.json()
     return (
         <div className='my-10 container mx-auto'>
-        <h2 className='font-bold text-3xl mb-2.5'>Friends</h2>
+        <h2 className='font-bold text-3xl mb-2.5'>Friends..</h2>
 <div className='grid grid-cols-4 gap-6 '>
     
         {
