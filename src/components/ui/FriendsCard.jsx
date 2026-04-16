@@ -1,18 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 const statusObj={
-"on-track":"bg-red-500",
-"almost due": "bg-green-500",
-"overdue": "bg-blue-500"
+"on-track":"bg-[#244D3F]",
+"almost due": "bg-[#EFAD44]",
+"overdue": "bg-[#EF4444]"
 }
 const FriendsCard = ({friend}) => {
 
-    const {name,picture , days_since_contact,tags,status}=friend;
+    const {id, name,picture , days_since_contact,tags,status}=friend;
 
     
   return (
-    <div>
-      <div className="card bg-base-100  shadow-sm border">
+    
+      <Link href={`/${id}`} className="card bg-base-100 h-[300px] shadow-sm border">
         <figure className="px-10 pt-10">
        <Image className="rounded-full" src={picture} alt={name} width={100} height={100}/>
         </figure>
@@ -22,18 +23,18 @@ const FriendsCard = ({friend}) => {
            {days_since_contact}d ago
           </p>
 
-        <div className="flex gap-2">
+        <div className="grid grid-cols-3 gap-2">
             {
             tags.map((tag,index)=><div  key={index} className="badge bg-green-200 ">{tag}</div>)
         }
         </div>
 
-          <div className={`badge ${statusObj[status]} `}>{status}</div>
+          <div className={`badge text-white ${statusObj[status]} `}>{status}</div>
 
        
         </div>
-      </div>
-    </div>
+      </Link>
+    
   );
 };
 
