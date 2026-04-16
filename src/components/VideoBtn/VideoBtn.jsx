@@ -3,6 +3,7 @@ import { FriendsContext } from '@/ContextApi/Provider';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { FiVideo } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const VideoBtn = ({friend}) => {
 
@@ -20,6 +21,8 @@ const VideoBtn = ({friend}) => {
     timeZone: 'Asia/Dhaka' 
         })
     }]);
+
+    toast.success(`${friend.name} with video`)
 }
     return  <a  onClick={()=>videoListHandle(friend)} className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-100">
               <FiVideo size={20} />

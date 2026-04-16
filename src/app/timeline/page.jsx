@@ -1,7 +1,7 @@
 'use client'
 import { FriendsContext } from '@/ContextApi/Provider';
 import Image from 'next/image';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import callImg from '../../assets/call.png'
 import textImg from '../../assets/text.png'
 import videoImg from '../../assets/video.png'
@@ -9,61 +9,50 @@ import videoImg from '../../assets/video.png'
 const TimelinePage = () => {
 
     const { callList, videoList, textList } = useContext(FriendsContext);
+    const [filter, setFilter] = useState('all'); 
+    
+    const allList = [
+        ...callList.map(item => ({ ...item, type: 'Call', img: callImg })),
+        ...videoList.map(item => ({ ...item, type: 'Video', img: videoImg })),
+        ...textList.map(item => ({ ...item, type: 'Text', img: textImg })),
+    ];
+
+    
+    const filteredList = filter === 'all'
+        ? allList
+        : allList.filter(item => item.type.toLowerCase() === filter.toLowerCase());
 
     return (
-        <div className='p-4'>
-            <h2 className='text-xl font-bold mb-4'>This Is Timeline Page</h2>
+        <div className='p-8'>
+            <h2 className='text-3xl font-bold mb-6'>Timeline</h2>
 
-            {/* Call List */}
-            {callList.length > 0 && callList.map((call) => (
-                <div key={call.id} className='card bg-base-100 shadow-2xl my-4 p-6'>
-                    <div className='flex items-center gap-3'>
-                        {/* Icon */}
-                        <Image src={callImg} alt='call img' width={24} height={24} />
+          
+            <select
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+                className='select select-bordered w-64 mb-6'>
+                <option value='all'>Filter timeline</option>
+                <option value='Call'>Call</option>
+                <option value='Text'>Text</option>
+                <option value='Video'>Video</option>
+            </select>
 
-                        {/* Text */}
-                        <div>
-                            <h2 className='font-bold'>
-                                Call <span className='font-normal text-gray-500'>with {call.name}</span>
-                            </h2>
-                            <p className='text-sm text-gray-400'>{call.time}</p>
+            {/* List */}
+            {filteredList.length > 0 ? (
+                filteredList.map((item) => (
+                    <div key={`${item.type}-${item.id}`} className='card bg-base-100 shadow my-3 p-5'>
+                        <div className='flex items-center gap-3'>
+                            <Image src={item.img} alt={item.type} width={28} height={28} />
+                            <div>
+                                <h2 className='font-bold'>
+                                    {item.type} <span className='font-normal text-gray-500'>with {item.name}</span>
+                                </h2>
+                                <p className='text-sm text-gray-400'>{item.time}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-
-            {/* Video List */}
-            {videoList.length > 0 && videoList.map((video) => (
-                <div key={video.id} className='card bg-base-100 shadow-2xl my-4 p-6'>
-                    <div className='flex items-center gap-3'>
-                        <Image src={videoImg} alt='video img' width={24} height={24} />
-                        <div>
-                            <h2 className='font-bold'>
-                                Video <span className='font-normal text-gray-500'>with {video.name}</span>
-                            </h2>
-                            <p className='text-sm text-gray-400'>{video.time}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
-
-            {/* Text List */}
-            {textList.length > 0 && textList.map((text) => (
-                <div key={text.id} className='card bg-base-100 shadow-2xl my-4 p-6'>
-                    <div className='flex items-center gap-3'>
-                        <Image src={textImg} alt='text img' width={24} height={24} />
-                        <div>
-                            <h2 className='font-bold'>
-                                Text <span className='font-normal text-gray-500'>with {text.name}</span>
-                            </h2>
-                            <p className='text-sm text-gray-400'>{text.time}</p>
-                        </div>
-                    </div>
-                </div>
-            ))}
-
-            {/* if All card empty */}
-            {callList.length === 0 && videoList.length === 0 && textList.length === 0 && (
+                ))
+            ) : (
                 <p className='text-gray-400 text-center mt-10'>No history Available</p>
             )}
         </div>

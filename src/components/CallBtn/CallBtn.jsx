@@ -3,6 +3,7 @@ import { FriendsContext } from '@/ContextApi/Provider';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { FiPhone } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const CallBtn = ({friend}) => {
 
@@ -20,6 +21,8 @@ const CallBtn = ({friend}) => {
     timeZone: 'Asia/Dhaka' 
         })
       }])
+
+      toast.success(`${friend.name} is called`)
 
     }
 

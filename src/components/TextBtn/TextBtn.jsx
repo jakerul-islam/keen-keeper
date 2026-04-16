@@ -3,6 +3,7 @@ import { FriendsContext } from '@/ContextApi/Provider';
 import Link from 'next/link';
 import React, { useContext } from 'react';
 import { FiMessageSquare } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const TextBtn = ({friend}) => {
 
@@ -19,6 +20,7 @@ const TextBtn = ({friend}) => {
     timeZone: 'Asia/Dhaka' 
         })
     }])
+    toast.success(`${friend.name} is text`)
   }
     return  <a onClick={()=> textListHandle(friend)} className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-100">
               <FiMessageSquare size={20} />
