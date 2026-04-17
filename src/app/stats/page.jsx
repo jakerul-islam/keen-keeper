@@ -13,7 +13,12 @@ const StatsPage = () => {
   ];
 
   return (
-    <PieChart width={400} height={400}>
+  <div className="my-7 container mx-auto">
+    <h2 className="font-bold text-5xl">Friendship Analytics</h2>
+     <div className="card bg-base-200 my-10 p-6">
+    <h2 className="font-bold text-2xl">By Interaction Type</h2>
+   <div className="flex justify-center">
+      <PieChart  width={400} height={400}>
       <Pie
         data={data}
         innerRadius="60%"
@@ -30,6 +35,9 @@ const StatsPage = () => {
       <Legend />
       <Tooltip />
     </PieChart>
+   </div>
+   </div>
+  </div>
   );
 };
 
