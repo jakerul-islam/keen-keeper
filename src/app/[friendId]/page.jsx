@@ -5,6 +5,7 @@ import { FiPhone, FiMessageSquare, FiVideo } from "react-icons/fi";
 import CallBtn from "@/components/CallBtn/CallBtn";
 import TextBtn from "@/components/TextBtn/TextBtn";
 import VideoBtn from "@/components/VideoBtn/VideoBtn";
+import NotFound from "../not-found";
 
 const statusObj = {
   "on-track": "bg-[#244D3F]",
@@ -21,7 +22,7 @@ const FriendDetailsPage = async ({ params }) => {
   const friend = friends.find((f) => f.id == friendId);
 
   if (!friend) {
-    return <p className="text-center mt-20">Friend not found</p>;
+    return <NotFound/>;
   }
 
   const { name, picture, days_since_contact, status, tags, bio, goal, next_due_date, email } = friend;
